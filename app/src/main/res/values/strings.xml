@@ -30,4 +30,11 @@
     <string name="button_potencia">Potencia</string>
     <string name="button_raiz">Raiz</string>
 
+    <string-array name="funciones">
+        <item>Funciones Trigonometricas</item>
+        <item>ASen</item>
+        <item>ACos</item>
+        <item>ATan</item>
+    </string-array>
+
 </resources>

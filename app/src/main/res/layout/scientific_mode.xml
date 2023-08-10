@@ -12,85 +12,89 @@
         android:gravity="center"
         android:visibility="visible">
 
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="20dp">
-
-            <CheckBox
-                android:id="@+id/extra"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="CheckBox" />
+            android:layout_weight="1">
 
             <LinearLayout
                 android:id="@+id/layoutSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="horizontal">
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <Spinner
                     android:id="@+id/Trigonometricas"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="40dp" />
             </LinearLayout>
 
-        </TableRow>
-
-        <LinearLayout
-            android:id="@+id/layoutRbtns"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
+            <CheckBox
+                android:id="@+id/extra"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:addStatesFromChildren="false"
-                android:checkedButton="@id/rbtnRad"
+                android:layout_height="50dp"
+                android:layout_weight="3"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:text="@string/extra" />
 
-                <RadioButton
-                    android:id="@+id/rbtnRad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Radianes"
-                    android:textSize="15sp" />
-
-                <RadioButton
-                    android:id="@+id/rbtnGrados"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Grados"
-                    android:textSize="15sp" />
-            </RadioGroup>
-        </LinearLayout>
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" >
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/layoutRbtns"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@id/rbtnRad"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbtnRad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Radianes"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbtnGrados"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Grados"
+                        android:textSize="15sp" />
+                </RadioGroup>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
 
             <ImageButton
                 android:id="@+id/button_seno"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
@@ -102,12 +106,13 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/seno" />
+                android:src="@drawable/seno"
+                android:tag="Sen" />
 
             <ImageButton
                 android:id="@+id/button_cos"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
@@ -119,12 +124,13 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/cos" />
+                android:src="@drawable/cos"
+                android:tag="Cos" />
 
             <ImageButton
                 android:id="@+id/button_tan"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
@@ -136,18 +142,20 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/tan" />
+                android:src="@drawable/tan"
+                android:tag="Tan" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" >
+            android:layout_weight="2"
+            android:gravity="center">
 
             <ImageButton
                 android:id="@+id/button_raiz"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
@@ -159,12 +167,13 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/raiz" />
+                android:src="@drawable/raiz"
+                android:tag="Raiz" />
 
             <ImageButton
                 android:id="@+id/button_pow"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
@@ -176,25 +185,11 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/potencia" />
+                android:src="@drawable/potencia"
+                android:tag="Potencia ^2" />
 
-            <ImageButton
-                android:id="@+id/button_tan2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button_background"
-                android:backgroundTint="#2D2F31"
-                android:contentDescription="@string/button_tan"
-                android:cropToPadding="false"
-                android:padding="@dimen/button_padding"
-                android:scaleType="fitCenter"
-                android:src="@drawable/tan" />
         </TableRow>
+
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

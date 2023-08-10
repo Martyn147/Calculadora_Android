@@ -30,7 +30,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ce" />
+                android:src="@drawable/ce"
+                android:tag="C" />
 
             <ImageButton
                 android:id="@+id/button_negative"
@@ -47,7 +48,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/negative" />
+                android:src="@drawable/negative"
+                android:tag="*(-1)" />
 
             <ImageButton
                 android:id="@+id/button_percent"
@@ -64,7 +66,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/percent" />
+                android:src="@drawable/percent"
+                android:tag="%" />
 
             <ImageButton
                 android:id="@+id/button_divide"
@@ -81,7 +84,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/divide" />
+                android:src="@drawable/divide"
+                android:tag="/" />
 
         </TableRow>
 
@@ -105,7 +109,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_7" />
+                android:src="@drawable/_7"
+                android:tag="7" />
 
             <ImageButton
                 android:id="@+id/button_8"
@@ -122,7 +127,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_8" />
+                android:src="@drawable/_8"
+                android:tag="8" />
 
             <ImageButton
                 android:id="@+id/button_9"
@@ -139,7 +145,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_9" />
+                android:src="@drawable/_9"
+                android:tag="9" />
 
             <ImageButton
                 android:id="@+id/button_multiply"
@@ -156,7 +163,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/multiply" />
+                android:src="@drawable/multiply"
+                android:tag="*" />
         </TableRow>
 
         <TableRow
@@ -179,7 +187,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_4" />
+                android:src="@drawable/_4"
+                android:tag="4" />
 
             <ImageButton
                 android:id="@+id/button_5"
@@ -196,7 +205,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_5" />
+                android:src="@drawable/_5"
+                android:tag="5" />
 
             <ImageButton
                 android:id="@+id/button_6"
@@ -213,7 +223,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_6" />
+                android:src="@drawable/_6"
+                android:tag="6" />
 
             <ImageButton
                 android:id="@+id/button_minus"
@@ -230,7 +241,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/minus" />
+                android:src="@drawable/minus"
+                android:tag="-" />
         </TableRow>
 
         <TableRow
@@ -253,7 +265,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_1" />
+                android:src="@drawable/_1"
+                android:tag="1" />
 
             <ImageButton
                 android:id="@+id/button_2"
@@ -270,7 +283,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_2" />
+                android:src="@drawable/_2"
+                android:tag="2" />
 
             <ImageButton
                 android:id="@+id/button_3"
@@ -287,7 +301,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_3" />
+                android:src="@drawable/_3"
+                android:tag="3" />
 
             <ImageButton
                 android:id="@+id/button_plus"
@@ -304,7 +319,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/plus" />
+                android:src="@drawable/plus"
+                android:tag="+" />
         </TableRow>
 
         <TableRow
@@ -327,7 +343,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/_0" />
+                android:src="@drawable/_0"
+                android:tag="0" />
 
             <ImageButton
                 android:id="@+id/button_point"
@@ -344,7 +361,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/point" />
+                android:src="@drawable/point"
+                android:tag="." />
 
             <ImageButton
                 android:id="@+id/button_equals"
@@ -360,7 +378,8 @@
                 android:cropToPadding="false"
                 android:padding="@dimen/button_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/equals" />
+                android:src="@drawable/equals"
+                android:tag="=" />
         </TableRow>
     </TableLayout>
 
