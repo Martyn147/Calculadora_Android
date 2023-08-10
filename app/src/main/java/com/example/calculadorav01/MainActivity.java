@@ -6,9 +6,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -20,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private View divider1;
     private TextView textView1, textView2;
     private Calculator calculator;
+    CheckBox chkMostrar;
+    LinearLayout layoutSpinner, layoutRbtns;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         tablaCientifica = findViewById(R.id.scientific);
         tituloText = findViewById(R.id.tituloApp);
         divider1 = findViewById(R.id.divider1);
+
+        chkMostrar = findViewById(R.id.extra);
+        layoutSpinner = findViewById(R.id.layoutSpinner);
+        layoutRbtns = findViewById(R.id.layoutRbtns);
         // ----------------------------   Calculator -----------------------------\\
         textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
@@ -139,7 +149,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         updateTableLayoutVisibility();
+
+        //-------------------------------  Spinner ------------------------------\\
+        Spinner spinner = findViewById(R.id.Trigonometricas);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.funciones, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+        if (chkMostrar.isChecked()) {
+            layoutSpinner.setVisibility(View.VISIBLE);
+            layoutRbtns.setVisibility(View.VISIBLE);
+        } else {
+            layoutSpinner.setVisibility(View.GONE);
+            layoutRbtns.setVisibility(View.GONE);
+        }
+
+        chkMostrar.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                layoutSpinner.setVisibility(View.VISIBLE);
+                layoutRbtns.setVisibility(View.VISIBLE);
+            } else {
+                layoutSpinner.setVisibility(View.GONE);
+                layoutRbtns.setVisibility(View.GONE);
+            }
+        });
     }
+
+
+
+    // ----------------------------   Switch -----------------------------\\
     private void updateTableLayoutVisibility() {
         boolean isOrientationHorizontal = getResources().getConfiguration().orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE;
         boolean isSwitchChecked = modoCientifica.isChecked();
@@ -154,9 +193,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    // ----------------------------   Calculadora -----------------------------\\
     private void handleInput(String input) {
         String result = calculator.handleInput(input);
         textView1.setText(result);
     }
+
+    //------------------------------- Spinner-----------------------------------\\
+
 }

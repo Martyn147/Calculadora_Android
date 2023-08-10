@@ -22,5 +22,12 @@
     <string name="button_negative">negative</string>
     <string name="button_delete">backspace</string>
     <string name="valorDefault">0</string>
+    <string name="Trigonometricas">Trigonometricas</string>
+    <string name="extra">Extras Trig.</string>
+    <string name="button_sen">seno</string>
+    <string name="button_cos">coseno</string>
+    <string name="button_tan">tangente</string>
+    <string name="button_potencia">Potencia</string>
+    <string name="button_raiz">Raiz</string>
 
 </resources>

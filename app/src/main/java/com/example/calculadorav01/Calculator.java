@@ -1,41 +1,46 @@
 package com.example.calculadorav01;
-
 public class Calculator {
-    private double currentValue = 0;
+    private double value = 0;
+    private double  value1 = 0;
     private String currentOperator = "";
     private boolean operatorClicked = false;
     private boolean decimalEntered = false;
+
     public String handleInput(String input) {
-        if (input.matches("[0-9.]")) {
+        if (input.matches("[0-9]")) {
             handleNumber(input);
-        } else if (input.matches("[+\\-×÷]")) {
+        } else if (input.equals(".")) {
+            handleDecimal();
+        } else if (input.matches("[+\\-*/]")) {
             handleOperator(input);
         } else if (input.equals("=")) {
             return calculate();
         } else if (input.equals("C")) {
             clear();
         }
-
-        return String.valueOf(currentValue);
+        return formatValue(value);
     }
+
+    private void handleNumber(String number) {
+        if (operatorClicked || value == 0) {
+            value = Double.parseDouble(number);
+            operatorClicked = false;
+        } else {
+            value = value * 10 + Double.parseDouble(number);
+        }
+    }
+
     private void handleDecimal() {
         if (!decimalEntered) {
-            currentValue = 0;
+            value = 0;
             decimalEntered = true;
         }
     }
-    private void handleNumber(String number) {
-        if (operatorClicked || currentValue == 0) {
-            currentValue = Double.parseDouble(number);
-            operatorClicked = false;
-        } else {
-            currentValue = currentValue * 10 + Double.parseDouble(number);
-        }
-    }
 
-     private void handleOperator(String operator) {
+    private void handleOperator(String operator) {
         if (!operatorClicked) {
-            calculate(); // Realiza el cálculo con el operador anterior
+
+            calculate();
         }
         currentOperator = operator;
         operatorClicked = true;
@@ -43,40 +48,47 @@ public class Calculator {
     }
 
     private String calculate() {
-        double result = currentValue;
-
         switch (currentOperator) {
             case "+":
-                result += currentValue;
+                value += Double.parseDouble(formatValue(value));
                 break;
             case "-":
-                result -= currentValue;
+                value -= Double.parseDouble(formatValue(value));
                 break;
-            case "×":
-                result *= currentValue;
+            case "*":
+                value *= Double.parseDouble(formatValue(value));
                 break;
-            case "÷":
-                if (currentValue != 0) {
-                    result /= currentValue;
+            case "/":
+                double divisor = Double.parseDouble(formatValue(value));
+                if (divisor != 0) {
+                    value /= divisor;
                 } else {
-                    return "Error"; // Manejar la división por cero
+                    clear();
+                    return "Error: Division by zero";
                 }
                 break;
-            // Agregar más casos para otros operadores si es necesario
         }
 
-        currentValue = result;
-        currentOperator = "=";
-        operatorClicked = false;
-        decimalEntered = false;
-
-        return String.valueOf(currentValue);
-    }
-
-
-    private void clear() {
-        currentValue = 0;
         currentOperator = "";
         operatorClicked = false;
+        decimalEntered = false;
+        return formatValue(value);
     }
+
+    private void clear() {
+        value = 0;
+        currentOperator = "";
+        operatorClicked = false;
+        decimalEntered = false;
+    }
+
+    private String formatValue(double value) {
+        if (value == (long) value) {
+            return String.format("%d", (long) value);
+        } else {
+            return String.format("%s", value);
+        }
+    }
+
+
 }
